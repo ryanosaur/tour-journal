@@ -31,4 +31,6 @@ mobile/node_modules/
 mobile/platforms/
 mobile/plugins/
 
+#stuff for database
+backend/node_modules/
 
