@@ -5,7 +5,7 @@
   <ion-content class="center">
     <div class="list">
 
-      <a class="item item-thumbnail-left" href="#" ng-repeat='artist in artists track by $index'>
+      <a ng-click="getArtistPage($index)" class="item item-thumbnail-left" href="#" ng-repeat='artist in artists track by $index'>
         <img ng-src="{{ artist.profile_img || 'http://placehold.it/100x100' }}">
         <h2>{{artist.id}}</h2>
         <p>{{artist.genre}}</p>
