@@ -55,7 +55,28 @@ angular.module('starter.controllers', [])
     });
   }
 })
-.controller('LoginCtrl', function($scope, User) {
-
+.controller('VenuesCtrl', function($scope, User, Venue) {
+  $scope.$on('$ionicView.enter', function(e) {
+    Venue.getVenues()
+    .success(function(venues){
+      console.log(venues);
+      $scope.venues = venues;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  });
+})
+.controller('ArtistsCtrl', function($scope, User, Artist) {
+  $scope.$on('$ionicView.enter', function(e) {
+    Artist.getArtists()
+    .success(function(artists){
+      console.log(artists);
+      $scope.artists = artists;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  });
 })
 ;
