@@ -15,9 +15,17 @@ router.post('/signup', function(req, res, next) {
   var newProfile = new ProfileSchema(req.body);
   var document = [newProfile];
   cpsConn.sendRequest(new cps.InsertRequest(document), function (err, resp) {
-     if (err) return console.error(err); // Handle error
+     if (err){
+       return console.error(err);
+     } 
      console.log(resp);
+     res.send('new user');
   });
+});
+
+router.post('/login', function(req, res, next) {
+  console.log(req.body);
+  res.send('hello!');
 });
 
 
