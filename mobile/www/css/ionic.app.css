@@ -7698,12 +7698,22 @@ h1 {
   font-size: 2em !important;
   color: white; }
 
+input {
+  font-family: 'Roboto Slab'; }
+
+h2 {
+  font-family: 'Roboto Slab';
+  color: white; }
+
 body {
   font-family: 'Open Sans'; }
 
 .ctr {
   margin: 0 auto;
   width: 26% !important; }
+
+ion-content .search .item {
+  background-color: black; }
 
 .logo {
   margin-top: 5vh;
@@ -7712,6 +7722,9 @@ body {
 .feature-image {
   width: 100vw;
   height: 50vw; }
+
+.item-input-inset {
+  background-color: #333333; }
 
 .login-buttons {
   margin-top: 80vh; }
@@ -7729,14 +7742,23 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  background-image: url('/img/sign-up-bg.png');
-  background-size: cover; }
+  background-image: url('../img/sign-up-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 100%; }
   .login-modal .item {
     padding-top: 0px; }
   .login-modal .signup-button {
     padding-top: 5px;
     margin-left: 10px;
     width: 95%; }
+
+.inline-profile-rating span {
+  font-size: 1em;
+  color: white; }
+.inline-profile-rating img {
+  width: 11px;
+  margin-left: 30px; }
 
 .profile-rating {
   text-align: center; }
@@ -7755,3 +7777,7 @@ body {
 .feature {
   background-color: #000000;
   color: #ffffff; }
+
+.title {
+  font-family: 'Roboto Slab';
+  font-size: 2em !important; }
