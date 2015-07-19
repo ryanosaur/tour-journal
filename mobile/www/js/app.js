@@ -94,7 +94,8 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     url: '/profile/:profileId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/profile.html'
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileCtrl'
       }
     }
   });

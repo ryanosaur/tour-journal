@@ -7719,6 +7719,18 @@ body {
 .artists {
   background-color: black; }
 
+.booking {
+  background-color: black; }
+  .booking h2 {
+    margin-top: 6vh;
+    color: white;
+    text-align: center; }
+  .booking h3 {
+    color: white;
+    text-align: center; }
+  .booking .booking-form {
+    margin-top: 12vh; }
+
 .button-wrapper {
   margin: 0 auto;
   margin-top: 10vh;
@@ -7781,6 +7793,12 @@ ion-content .search .item {
 .login-email {
   border: none;
   background-color: transparent;
+  width: 100%; }
+
+.hideBtn {
+  border: none;
+  background-color: transparent;
+  margin-top: 20vh;
   width: 100%; }
 
 .login-form {
@@ -7917,3 +7935,7 @@ ion-content .search .item {
 .title {
   font-family: 'Roboto Slab';
   font-size: 2em !important; }
+
+.feature-img {
+  width: 95px;
+  height: 95px; }

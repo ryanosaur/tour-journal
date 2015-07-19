@@ -18,6 +18,8 @@ angular.module('starter.controllers', [])
     $scope.modal.show();
   });
 
+
+
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
     $scope.modal.hide();
@@ -54,6 +56,28 @@ angular.module('starter.controllers', [])
       console.log(error);
     });
   }
+})
+.controller('ProfileCtrl', function($scope, $ionicModal, User, Venue, $state) {
+  console.log('profilectrl');
+  $scope.booking = function() {
+    console.log('book');
+    $ionicModal.fromTemplateUrl('templates/booking.html', {
+      scope: $scope
+    }).then(function(modal) {
+      $scope.modal = modal;
+      $scope.modal.show();
+    });  
+  }
+
+  $scope.$on('$ionicView.enter', function(e) {
+    Venue.getVenue($state.params.username)
+    .success(function(user){
+      $scope.user = user;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  });
 })
 .controller('VenuesCtrl', function($scope, User, Venue) {
   $scope.$on('$ionicView.enter', function(e) {
