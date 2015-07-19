@@ -7715,6 +7715,19 @@ body {
 ion-content .search .item {
   background-color: black; }
 
+.item-complex {
+  background-color: black !important; }
+
+.menu-item {
+  background-color: black !important;
+  color: white; }
+  .menu-item a {
+    background-color: black !important;
+    color: white; }
+
+.menu {
+  background-color: black !important; }
+
 .logo {
   margin-top: 5vh;
   width: 100px; }
