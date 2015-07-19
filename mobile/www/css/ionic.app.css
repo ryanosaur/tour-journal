@@ -7693,6 +7693,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.item {
+  background-color: black; }
+
 h1 {
   font-family: 'Roboto Slab';
   font-size: 2em !important;
@@ -7718,6 +7721,9 @@ ion-content .search .item {
 .item-complex {
   background-color: black !important; }
 
+#messages {
+  background-color: black; }
+
 .menu-item {
   background-color: black !important;
   color: white; }
@@ -7728,9 +7734,31 @@ ion-content .search .item {
 .menu {
   background-color: black !important; }
 
+.list-inset {
+  background-color: transparent !important; }
+
 .logo {
   margin-top: 5vh;
   width: 100px; }
+
+.login-email {
+  border: none;
+  background-color: transparent;
+  margin-top: 20vh;
+  width: 100%; }
+
+.login-form {
+  margin-top: 37vh; }
+  .login-form .item-floating-label {
+    width: 100%; }
+
+.signup {
+  border: none;
+  background-color: transparent; }
+
+.signup-wrapper {
+  border: none;
+  background-color: transparent; }
 
 .feature-image {
   width: 100vw;

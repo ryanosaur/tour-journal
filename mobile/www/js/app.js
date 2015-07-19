@@ -69,6 +69,15 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     }
   })
 
+  .state('app.messages', {
+    url: '/messages',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/messages.html'
+      }
+    }
+  })
+
   .state('app.search', {
     url: '/search',
     views: {
