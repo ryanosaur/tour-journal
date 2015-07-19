@@ -18,6 +18,7 @@ router.post('/signup', function(req, res, next) {
   cpsConn.sendRequest(new cps.InsertRequest(document), function (err, resp) {
     if (err){
       res.json(err);
+      return;
     }
      res.json(resp);
   });
@@ -28,6 +29,7 @@ router.post('/login', function(req, res, next) {
   cpsConn.sendRequest(retrieve_req, function (err, retrieve_resp) {
      if (err){
        res.json(err);
+       return;
      }
      if (retrieve_resp) {
         res.json(retrieve_resp.results.document[0]);
@@ -40,6 +42,7 @@ router.get('/artists/:id', function(req, res, next){
   cpsConn.sendRequest(retrieve_req, function (err, retrieve_resp) {
      if (err){
         res.json(err);
+        return;
       }
      if (retrieve_resp) {
         res.json(retrieve_resp.results.document[0]);
@@ -52,6 +55,7 @@ router.patch('/artists/:id', function(req, res, next){
   cpsConn.sendRequest(replace_request, function (err, replace_resp) {
      if (err){
        res.json(err);
+       return;
      }
      if (replace_resp) {
         res.json(replace_resp);
@@ -63,6 +67,7 @@ router.delete('/artists/:id', function(req, res, next){
   cpsConn.sendRequest(new cps.DeleteRequest({ id: req.params.id }), function (err, delete_resp) {
      if (err){
        res.json(err);
+       return;
      }
      if(delete_resp){
       res.json(delete_resp);
@@ -74,7 +79,10 @@ router.get('/venues/', function(req, res, next){
   var search_req = new cps.SearchRequest(cps.Term("venue", "userType"),
       0, 20);
     cpsConn.sendRequest(search_req, function (err, search_resp) {
-       if (err) return console.log(err);
+       if (err){
+         res.json(err);
+         return;
+       };
        console.log(search_resp.results.document);
     });
 });
@@ -84,6 +92,7 @@ router.get('/venues/:id', function(req, res, next){
   cpsConn.sendRequest(retrieve_req, function (err, retrieve_resp) {
      if (err){
         res.json(err);
+        return;
       }
      if (retrieve_resp) {
         res.json(retrieve_resp.results.document[0]);
@@ -96,6 +105,7 @@ router.patch('/venues/:id', function(req, res, next){
   cpsConn.sendRequest(replace_request, function (err, replace_resp) {
      if (err){
        res.json(err);
+       return;
      }
      if (replace_resp) {
         res.json(replace_resp);
@@ -107,6 +117,7 @@ router.delete('/venues/:id', function(req, res, next){
   cpsConn.sendRequest(new cps.DeleteRequest({ id: req.params.id }), function (err, delete_resp) {
      if (err){
        res.json(err);
+       return;
      }
      if(delete_resp){
       res.json(delete_resp);
@@ -118,8 +129,11 @@ router.get('/events/', function(req, res, next){
   var search_req = new cps.SearchRequest(cps.Term("event", "type"),
       0, 20);
     cpsConn.sendRequest(search_req, function (err, search_resp) {
-       if (err) return console.log(err);
-       console.log(search_resp.results.document);
+       if (err){
+         res.json(err);
+         return;
+       }
+       res.json(search_resp.results.document);
     });
 });
 
@@ -129,6 +143,7 @@ router.post('/events', function(req, res, next) {
   cpsConn.sendRequest(new cps.InsertRequest(document), function (err, resp) {
     if (err){
       res.json(err);
+      return;
     }
      res.json(resp);
   });
@@ -139,6 +154,7 @@ router.patch('/events/:id', function(req, res, next){
   cpsConn.sendRequest(replace_request, function (err, replace_resp) {
      if (err){
        res.json(err);
+       return;
      }
      if (replace_resp) {
         res.json(replace_resp);
@@ -150,11 +166,24 @@ router.delete('/events/:id', function(req, res, next){
   cpsConn.sendRequest(new cps.DeleteRequest({ id: req.params.id }), function (err, delete_resp) {
      if (err){
        res.json(err);
+       return;
      }
      if(delete_resp){
       res.json(delete_resp);
      }
   });
 });
+
+router.get('/search/', function(req, res, next){
+  var search_req = new cps.SearchRequest("k*", 0, 10);
+    cpsConn.sendRequest(search_req, function (err, search_resp) {
+       if (err){
+         res.json(err);
+         return;
+       }
+       res.json(search_resp.results.document);
+    });
+});
+
 
 module.exports = router;
