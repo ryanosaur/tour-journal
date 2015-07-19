@@ -41,6 +41,15 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     }
   })
 
+  .state('app.register', {
+    url: '/register',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/register.html'
+      }
+    }
+  })
+
   .state('app.venues', {
     url: '/venues',
     views: {
