@@ -129,10 +129,11 @@ angular.module('starter.controllers', [])
       });
     });
   $scope.getArtistPage = function(index){
-    console.log(index);
+    $state.go('app.profile', {id: $scope.artists[index].id });
+    // console.log(index);
   }
   $scope.getVenuePage = function(index){
-    console.log(index);
+    $state.go('app.profile', {id: $scope.artists[index].id });
   }
 })
 .controller('BookingCtrl', function($scope, $state, User, Artist, Events) {
