@@ -7702,7 +7702,8 @@ h1 {
   color: white; }
 
 input {
-  font-family: 'Roboto Slab'; }
+  font-family: 'Roboto Slab';
+  color: white !important; }
 
 h2 {
   font-family: 'Roboto Slab';
