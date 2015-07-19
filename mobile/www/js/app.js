@@ -21,7 +21,6 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     }
   });
 })
-
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
@@ -36,7 +35,8 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     url: '/featured',
     views: {
       'menuContent': {
-        templateUrl: 'templates/featured.html'
+        templateUrl: 'templates/featured.html',
+        controller: 'FeaturedCtrl'
       }
     }
   })
