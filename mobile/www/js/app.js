@@ -64,7 +64,8 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     url: '/artists',
     views: {
       'menuContent': {
-        templateUrl: 'templates/artists.html'
+        templateUrl: 'templates/artists.html',
+        controller: 'ArtistsCtrl'
       }
     }
   })

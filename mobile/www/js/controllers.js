@@ -68,7 +68,9 @@ angular.module('starter.controllers', [])
   });
 })
 .controller('ArtistsCtrl', function($scope, User, Artist) {
+  console.log('artists controller loaded');
   $scope.$on('$ionicView.enter', function(e) {
+    console.log('artists view enter');
     Artist.getArtists()
     .success(function(artists){
       console.log(artists);
