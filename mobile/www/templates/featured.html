@@ -9,21 +9,19 @@
         <img src="img/bass-feature.png" class="slider-image" alt="feature" />
       </ion-slide>
       <ion-slide>
-        <img src="img/dolby-ad.png" class="slider-image" alt="feature" />
+        <img src="img/lilb-feature.png" class="slider-image" alt="feature" />
       </ion-slide>
       <ion-slide>
         <img src="img/tam-feature.png" class="slider-image" alt="feature" />
       </ion-slide>
     </ion-slide-box>
-    
+
     <div class="item item-divider feature">
       Artists
     </div>
 
     <div class="row feature">
-      <div class="col padding"><img src="http://placehold.it/95x95" /></div>
-      <div class="col padding"><img src="http://placehold.it/95x95" /></div>
-      <div class="col padding"><img src="http://placehold.it/95x95" /></div>
+      <div class="col padding" ng-repeat="artist in artists"><img src="{{artist.profile_img}}"  style="width: 90px; height: 90px;"/></div>
     </div>
 
     <div class="item item-divider feature">
@@ -31,9 +29,7 @@
     </div>
 
     <div class="row feature">
-      <div class="col padding"><img src="http://placehold.it/95x95" /></div>
-      <div class="col padding"><img src="http://placehold.it/95x95" /></div>
-      <div class="col padding"><img src="http://placehold.it/95x95" /></div>
+      <div class="col padding" ng-repeat="venue in venues"><img src="{{venue.profile_img}}" style="width: 90px; height: 90px;"/></div>
     </div>
 
 

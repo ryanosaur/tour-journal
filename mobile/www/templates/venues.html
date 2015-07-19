@@ -17,7 +17,7 @@
     </div>
 
     <a class="item item-thumbnail-left" href="#" ng-repeat="venue in venues track by $index">
-      <img src="http://placehold.it/100x100">
+      <img src="{{venue.profile_img}}">
       <h2>{{venue.id}}</h2>
       <p>{{venue.location}}</p>
     </a>
