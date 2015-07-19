@@ -31,6 +31,11 @@ h1 {
   color: white;
 }
 
+input#search {
+  border: none;
+  color: black !important;
+}
+
 input {
   font-family: 'Roboto Slab';
   color: white !important;
@@ -45,6 +50,10 @@ body {
   font-family: 'Open Sans';
 }
 
+.artists {
+  background-color: black;
+}
+
 .button-wrapper {
   margin: 0 auto;
   margin-top: 10vh;
@@ -52,6 +61,10 @@ body {
   button {
     width: 200px;
   }
+}
+
+.slider-image-login {
+  width: 100%;
 }
 
 .item-select select {
@@ -70,6 +83,19 @@ ion-content .search .item {
 
 .item-complex {
   background-color: black !important;
+}
+
+.login-slider-wrapper {
+  margin-top: 22vh;
+}
+
+.login-slider {
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 6px;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .map {
@@ -107,7 +133,7 @@ ion-content .search .item {
 .login-email {
   border: none;
   background-color: transparent;
-  margin-top: 20vh;
+  // margin-top: 2vh;
   width: 100%;
 }
 
@@ -119,17 +145,75 @@ ion-content .search .item {
 }
 
 .login-form {
-  margin-top: 37vh;
+  margin-top: 10vh;
   .item-floating-label {
     width: 100%;
   }
 }
 
 .profile {
-  background-color: #333333;
+  background-color: black;
+  .inline-profile-rating {
+    margin: 0 auto;
+    width: 21%;
+    color: white;
+  }
+  .social-icons {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    span {
+      margin-left: 5px;
+      margin-right: 5px;      
+      font-size: 2em;
+    }
+  }
+  .profile-desc {
+    width: 100% !important;
+  }
+  .tag {
+    width: 12px;
+  }
+  .fa {
+    width: 20px !important;
+  }
+  .ctr {
+    color: white !important;    
+    text-align: center;
+    margin: 0 auto;
+    width: 21%;
+  }
+  p {
+
+  }
+  .ctr-profile {
+    color: white !important;    
+    text-align: center;
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 75%;
+  }  
+  h4 {
+    color: white !important;
+    text-align: center;
+    margin-bottom: 0;
+  }
 }
 
+.profile-buttons {
+  margin: 0 auto;
+  width: 80%;
+  img {
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 45%;
+  }
+}
+
+
 .signup {
+  margin-top: 10px;
   border: none;
   background-color: transparent;
 }
@@ -192,6 +276,11 @@ ion-content .search .item {
   }
 }
 
+.profile-img {
+  margin-top: -65px;
+  width: 100vw;
+}
+
 .profile-rating {
   text-align: center;
   span {
@@ -202,6 +291,10 @@ ion-content .search .item {
 .slider-image {
   width: 100vw;
   height: 100vw;
+}
+
+.search {
+  background-color: black;
 }
 
 .venues {

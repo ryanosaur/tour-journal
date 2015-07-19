@@ -42,11 +42,13 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('RegisterCtrl', function($scope, User) {
+.controller('RegisterCtrl', function($scope, $state, User) {
   $scope.register = function(user){
     User.registerUser(user)
     .success(function(user){
       User.setActiveUser(user);
+      console.log(User.activeUser);
+      $state.go('^.featured');
     })
     .catch(function(error){
       console.log(error);
