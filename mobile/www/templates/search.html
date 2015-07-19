@@ -3,7 +3,7 @@
     <div class="bar bar-header item-input-inset">
       <label class="item-input-wrapper">
         <i class="icon ion-ios-search placeholder-icon"></i>
-        <input type="search" placeholder="Search">
+        <input type="search" placeholder="Search" ng-model="search.searchText" ng-keyup="getResults(search)">
       </label>
       <button class="button button-clear">
         Cancel
@@ -37,7 +37,7 @@
             </span>
             <img src="img/tag.png" alt="">
             <span>Band Genre</span>
-          </div>          
+          </div>
         </a>
 
         <a class="item item-avatar" href="#">
@@ -61,31 +61,7 @@
             </span>
             <img src="img/tag.png" alt="">
             <span>Band Genre</span>
-          </div>          
-        </a>
-
-        <a class="item item-avatar" href="#">
-          <img src="http://placehold.it/100x100">
-          <h2>Band Name</h2>
-          <div class="inline-profile-rating">
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-half"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-outline"></i>
-            </span>
-            <img src="img/tag.png" alt="">
-            <span>Band Genre</span>
-          </div>          
+          </div>
         </a>
 
         <a class="item item-avatar" href="#">
@@ -109,8 +85,32 @@
             </span>
             <img src="img/tag.png" alt="">
             <span>Band Genre</span>
-          </div>          
-        </a>    
+          </div>
+        </a>
+
+        <a class="item item-avatar" href="#">
+          <img src="http://placehold.it/100x100">
+          <h2>Band Name</h2>
+          <div class="inline-profile-rating">
+            <span>
+              <i class="icon ion-ios-star"></i>
+            </span>
+            <span>
+              <i class="icon ion-ios-star"></i>
+            </span>
+            <span>
+              <i class="icon ion-ios-star"></i>
+            </span>
+            <span>
+              <i class="icon ion-ios-star-half"></i>
+            </span>
+            <span>
+              <i class="icon ion-ios-star-outline"></i>
+            </span>
+            <img src="img/tag.png" alt="">
+            <span>Band Genre</span>
+          </div>
+        </a>
 
       <div class="item item-divider">
         Venues
@@ -137,7 +137,7 @@
             </span>
             <img src="img/tag.png" alt="">
             <span>Venue Genre</span>
-          </div>          
+          </div>
         </a>
 
         <a class="item item-avatar" href="#">
@@ -161,7 +161,7 @@
             </span>
             <img src="img/tag.png" alt="">
             <span>Venue Genre</span>
-          </div>          
+          </div>
         </a>
 
         <a class="item item-avatar" href="#">
@@ -185,7 +185,7 @@
             </span>
             <img src="img/tag.png" alt="">
             <span>Venue Genre</span>
-          </div>          
+          </div>
         </a>
 
         <a class="item item-avatar" href="#">
@@ -209,11 +209,11 @@
             </span>
             <img src="img/tag.png" alt="">
             <span>Venue Genre</span>
-          </div>          
-        </a>   
+          </div>
+        </a>
 
     </div>
 
-    
+
   </ion-content>
 </ion-view>

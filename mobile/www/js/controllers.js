@@ -105,6 +105,19 @@ angular.module('starter.controllers', [])
     });
   });
 })
+.controller('SearchCtrl', function($scope, $state, User, Search) {
+  $scope.getResults = function(search){
+    console.log('controller', search);
+    Search.getResults(search)
+    .success(function(results){
+      console.log(results);
+      $scope.results = results;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  }
+})
 .controller('FeaturedCtrl', function($scope, $state, User, Artist, Events) {
   $scope.$on('$ionicView.enter', function(e) {
     // Artist.getArtist($state.params.username)

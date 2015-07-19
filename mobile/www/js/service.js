@@ -47,7 +47,7 @@
     }
   })
   .service('Events', function($http, URLS){
-    var BASE_URL = URLS.BASE_URLS;
+    var BASE_URL = URLS.BASE_URL;
     this.getEvents = function(){
       return $http.get(BASE_URL + '/events');
     }
@@ -62,6 +62,13 @@
     }
     this.deleteEvent = function(id){
       return $http.delete(BASE_URL + '/events/' + id);
+    }
+  })
+  .service('Search', function($http, URLS){
+    var BASE_URL = URLS.BASE_URL;
+    this.getResults = function(search){
+      console.log(search);
+      return $http.post(BASE_URL + '/search', search);
     }
   })
   ;
