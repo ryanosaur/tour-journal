@@ -6,13 +6,13 @@
   <ion-content>
     <ion-slide-box on-slide-changed="slideHasChanged($index)">
       <ion-slide>
-        <img src="img/bass-feature.png" class="slider-image" alt="feature" />
-      </ion-slide>
-      <ion-slide>
         <img src="img/lilb-feature.png" class="slider-image" alt="feature" />
       </ion-slide>
       <ion-slide>
         <img src="img/tam-feature.png" class="slider-image" alt="feature" />
+      </ion-slide>
+      <ion-slide>
+        <img src="img/bass-feature.png" class="slider-image" alt="feature" />
       </ion-slide>
     </ion-slide-box>
 
@@ -21,7 +21,11 @@
     </div>
 
     <div class="row feature">
-      <div class="col padding" ng-repeat="artist in artists"><img src="{{artist.profile_img}}"  style="width: 90px; height: 90px;"/></div>
+      <div class="col padding" ng-repeat="artist in artists track by $index">
+      <button ng-click="getArtistPage($index)" class="hideBtn" type="button">
+        <img src="{{artist.profile_img}}"  style="width: 90px; height: 90px;"/>
+      </button>
+      </div>
     </div>
 
     <div class="item item-divider feature">
@@ -29,9 +33,11 @@
     </div>
 
     <div class="row feature">
-      <div class="col padding" ng-repeat="venue in venues"><img src="{{venue.profile_img}}" style="width: 90px; height: 90px;"/></div>
+      <div class="col padding" ng-repeat="venue in venues track by $index">
+        <button ng-click="getVenuePage($index)" class="hideBtn" type="button">
+          <img src="{{venue.profile_img}}" style="width: 90px; height: 90px;"/>
+        </button>
+      </div>
     </div>
-
-
   </ion-content>
 </ion-view>

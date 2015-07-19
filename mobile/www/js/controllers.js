@@ -126,6 +126,12 @@ angular.module('starter.controllers', [])
         console.log(error);
       });
     });
+  $scope.getArtistPage = function(index){
+    console.log(index);
+  }
+  $scope.getVenuePage = function(index){
+    console.log(index);
+  }
 })
 .controller('BookingCtrl', function($scope, $state, User, Artist, Events) {
   $scope.$on('$ionicView.enter', function(e) {
