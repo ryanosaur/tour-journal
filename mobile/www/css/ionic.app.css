@@ -7701,9 +7701,6 @@ h1 {
 body {
   font-family: 'Open Sans'; }
 
-ion-header-bar {
-  background-color: transparent !important; }
-
 .ctr {
   margin: 0 auto;
   width: 26% !important; }

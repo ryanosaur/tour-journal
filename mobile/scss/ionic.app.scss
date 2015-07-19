@@ -23,11 +23,22 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 h1 {
   font-family: 'Roboto Slab';
-  font-size: 3em;
+  font-size: 2em !important;
+  color: white;
 }
 
 body {
   font-family: 'Open Sans';
+}
+
+.ctr {
+  margin: 0 auto;
+  width: 26% !important;
+}
+
+.logo {
+  margin-top: 5vh;
+  width: 100px;
 }
 
 .feature-image{
@@ -35,21 +46,34 @@ body {
   height: 50vw;
 }
 
-.login-modal{
-  top: 0 ;
-  bottom: 0 ; 
-  left: 0 ;
-  right: 0 ;
+.login-buttons {
+  margin-top: 80vh;
+}
+
+.login-buttons .item {
+  background-color: rgba(0,0,0,0) !important;
+  border: none;
+}
+
+.login-button {
   width: 100%;
-  .list {
-    margin-top: 10vh;
+}
+
+.login-modal{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-image: url('/img/sign-up-bg.png');
+  background-size: cover;
+  .item {
+    padding-top: 0px;
   }
-  button {
-    // padding-top: 10px;
-  }
-  span {
-    // margin-top: 30px !imortant;
-    // font-size: 300px !important;
+  .signup-button {
+    padding-top: 5px;
+    margin-left: 10px;
+    width: 95%;
   }
 }
 
