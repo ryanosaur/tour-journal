@@ -115,7 +115,7 @@ router.delete('/venues/:id', function(req, res, next){
 });
 
 router.get('/events/', function(req, res, next){
-  var search_req = new cps.SearchRequest(cps.Term("event", "userType"),
+  var search_req = new cps.SearchRequest(cps.Term("event", "type"),
       0, 20);
     cpsConn.sendRequest(search_req, function (err, search_resp) {
        if (err) return console.log(err);

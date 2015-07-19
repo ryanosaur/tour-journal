@@ -3,6 +3,7 @@ var booking = function BookingSchema(params) {
   this.artist = "";
   this.time = "";
   this.date = "";
+  this.type = "event";
   this.logistics = [];
 };
 
