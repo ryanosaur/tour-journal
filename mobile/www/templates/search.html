@@ -13,12 +13,12 @@
     <div class="list search">
 
       <div class="item item-divider">
-        Artists
+        Results
       </div>
 
-        <a class="item item-avatar" href="#">
-          <img src="http://placehold.it/100x100">
-          <h2>Band Name</h2>
+        <a class="item item-avatar" href="#" ng-repeat="result in results track by $index">
+          <img ng-src="{{result.profile_img}}">
+          <h2>{{result.id}}</h2>
           <div class="inline-profile-rating">
             <span>
               <i class="icon ion-ios-star"></i>
@@ -36,179 +36,7 @@
               <i class="icon ion-ios-star-outline"></i>
             </span>
             <img src="img/tag.png" alt="">
-            <span>Band Genre</span>
-          </div>
-        </a>
-
-        <a class="item item-avatar" href="#">
-          <img src="http://placehold.it/100x100">
-          <h2>Band Name</h2>
-          <div class="inline-profile-rating">
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-outline"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-outline"></i>
-            </span>
-            <img src="img/tag.png" alt="">
-            <span>Band Genre</span>
-          </div>
-        </a>
-
-        <a class="item item-avatar" href="#">
-          <img src="http://placehold.it/100x100">
-          <h2>Band Name</h2>
-          <div class="inline-profile-rating">
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-half"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-outline"></i>
-            </span>
-            <img src="img/tag.png" alt="">
-            <span>Band Genre</span>
-          </div>
-        </a>
-
-        <a class="item item-avatar" href="#">
-          <img src="http://placehold.it/100x100">
-          <h2>Band Name</h2>
-          <div class="inline-profile-rating">
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-half"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-outline"></i>
-            </span>
-            <img src="img/tag.png" alt="">
-            <span>Band Genre</span>
-          </div>
-        </a>
-
-      <div class="item item-divider">
-        Venues
-      </div>
-
-        <a class="item item-avatar" href="#">
-          <img src="http://placehold.it/100x100">
-          <h2>Venue Name</h2>
-          <div class="inline-profile-rating">
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-half"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-outline"></i>
-            </span>
-            <img src="img/tag.png" alt="">
-            <span>Venue Genre</span>
-          </div>
-        </a>
-
-        <a class="item item-avatar" href="#">
-          <img src="http://placehold.it/100x100">
-          <h2>Venue Name</h2>
-          <div class="inline-profile-rating">
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-half"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-outline"></i>
-            </span>
-            <img src="img/tag.png" alt="">
-            <span>Venue Genre</span>
-          </div>
-        </a>
-
-        <a class="item item-avatar" href="#">
-          <img src="http://placehold.it/100x100">
-          <h2>Venue Name</h2>
-          <div class="inline-profile-rating">
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-half"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-outline"></i>
-            </span>
-            <img src="img/tag.png" alt="">
-            <span>Venue Genre</span>
-          </div>
-        </a>
-
-        <a class="item item-avatar" href="#">
-          <img src="http://placehold.it/100x100">
-          <h2>Venue Name</h2>
-          <div class="inline-profile-rating">
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-half"></i>
-            </span>
-            <span>
-              <i class="icon ion-ios-star-outline"></i>
-            </span>
-            <img src="img/tag.png" alt="">
-            <span>Venue Genre</span>
+            <span>{{result.genre}}</span>
           </div>
         </a>
 
