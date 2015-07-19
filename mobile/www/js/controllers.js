@@ -128,6 +128,13 @@ angular.module('starter.controllers', [])
         console.log(error);
       });
     });
+  $scope.getArtistPage = function(index){
+    $state.go('app.profile', {id: $scope.artists[index].id });
+    // console.log(index);
+  }
+  $scope.getVenuePage = function(index){
+    $state.go('app.profile', {id: $scope.artists[index].id });
+  }
 })
 .controller('BookingCtrl', function($scope, $state, User, Artist, Events) {
   $scope.$on('$ionicView.enter', function(e) {
