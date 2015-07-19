@@ -7752,6 +7752,9 @@ body {
 ion-content .search .item {
   background-color: black; }
 
+.item {
+  border: 1px solid #333333; }
+
 .item-complex {
   background-color: black !important; }
 
@@ -7798,7 +7801,6 @@ ion-content .search .item {
 .hideBtn {
   border: none;
   background-color: transparent;
-  margin-top: 20vh;
   width: 100%; }
 
 .login-form {
