@@ -7695,25 +7695,63 @@ a.button {
 
 h1 {
   font-family: 'Roboto Slab';
-  font-size: 3em; }
+  font-size: 2em !important;
+  color: white; }
 
 body {
   font-family: 'Open Sans'; }
 
+.ctr {
+  margin: 0 auto;
+  width: 26% !important; }
+
+.logo {
+  margin-top: 5vh;
+  width: 100px; }
+
 .feature-image {
   width: 100vw;
   height: 50vw; }
+
+.login-buttons {
+  margin-top: 80vh; }
+
+.login-buttons .item {
+  background-color: transparent !important;
+  border: none; }
+
+.login-button {
+  width: 100%; }
 
 .login-modal {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%; }
-  .login-modal .list {
-    margin-top: 10vh; }
+  width: 100%;
+  background-image: url('/img/sign-up-bg.png');
+  background-size: cover; }
+  .login-modal .item {
+    padding-top: 0px; }
+  .login-modal .signup-button {
+    padding-top: 5px;
+    margin-left: 10px;
+    width: 95%; }
 
 .profile-rating {
   text-align: center; }
   .profile-rating span {
     font-size: 2em !important; }
+
+.slider-image {
+  width: 100vw;
+  height: 100vw; }
+
+.bar.bar-balanced {
+  border-color: #000000;
+  background-color: #000000;
+  color: #ffffff; }
+
+.feature {
+  background-color: #000000;
+  color: #ffffff; }

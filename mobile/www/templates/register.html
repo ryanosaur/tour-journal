@@ -1,18 +1,36 @@
-<ion-modal-view class="login-modal">
-  <ion-view view-title="Register">
-  <ion-content>
-    <form ng-submit="register()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Display Name</span>
-          <input type="text">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text">
-        </label>
-
-      </div>
-    </form>
-  </ion-content>
-</ion-modal-view>
+<ion-view view-title="Register">
+<ion-content class="center">
+  <form ng-submit="register()">
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Display Name</span>
+        <input type="text" placeholder="Display Name">
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Artist/Venue
+        </div>
+        <select>
+          <option>Artist</option>
+          <option selected>Venue</option>
+        </select>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Genre(s)</span>
+        <input type="text" placeholder="Genre(s)">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="Email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Location</span>
+        <input type="text" placeholder="Location">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Profile Image Url</span>
+        <input type="text" placeholder="Profile Image Url ex. http://placehold.it/150x150">
+      </label>
+    </div>
+  </form>
+</ion-content>
