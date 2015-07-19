@@ -16,12 +16,11 @@
       </button>
     </div>
 
-    <a class="item item-thumbnail-left" href="#" ng-repeat="venue in venues track by $index">
+    <a ng-click="getVenuePage($index)" class="item item-thumbnail-left" href="#" ng-repeat="venue in venues track by $index">
       <img src="{{venue.profile_img}}">
       <h2>{{venue.id}}</h2>
       <p>{{venue.location}}</p>
     </a>
-
 
   </ion-content>
 </ion-view>

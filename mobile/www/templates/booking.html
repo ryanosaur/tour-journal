@@ -1,8 +1,7 @@
 <ion-modal-view class="booking-modal booking">
-  <ion-content scroll="false" locking="true">
-    <h2>Artist</h2>
-    <h3>Venue</h3>
-    <form ng-submit="booking(user)" class="booking-form">
+  <ion-content scroll="false">
+    <h2>{{user.id}}</h2>
+    <form ng-submit="bookingUser(user)" class="booking-form">
       <div class="list list-inset">
 
         <label class="item item-input item-floating-label">
@@ -15,7 +14,7 @@
         </label>
 
       </div>
-      <div class="button-wrapper">      
+      <div class="button-wrapper">
         <button type="submit" name="button" class="button button-dark">Book</button>
       </div>
     </form>
