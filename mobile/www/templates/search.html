@@ -19,7 +19,7 @@
         Results
       </div>
 
-        <a class="item item-avatar" href="#" ng-repeat="result in results track by $index">
+        <a class="item item-avatar" ng-click="getArtistPage($index)" href="#" ng-repeat="result in results track by $index">
           <img ng-src="{{result.profile_img}}">
           <h2>{{result.id}}</h2>
           <div class="inline-profile-rating">
