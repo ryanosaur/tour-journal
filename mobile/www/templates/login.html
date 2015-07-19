@@ -1,49 +1,27 @@
 <ion-modal-view class="login-modal">
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-  </ion-header-bar>
+  <div class="ctr">
+    <img class="logo" src="img/logo.png" alt="">
+  </div>
   <ion-content>
     <form ng-submit="doLogin()">
       <div class="list">
-<!--         <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label> -->
-
         <div class="login-buttons">
-          <!-- <div class="button-row-bottom"> -->
           <label class="item">
-            <button class="button button-block button-balanced" ng-click="loginWithTwitter()">
-              <span class="social-icon"><i class="icon ion-social-twitter"></i></span>
-            </button>
+            <img class="login-button" src="img/twitter-login.png" ng-click="loginWithTwitter()"></img>
           </label>
 
           <label class="item">
-            <button class="button button-block button-balanced" ng-click="loginWithFacebook()">
-              <span><i class="icon ion-social-facebook"></i></span>
-            </button>
+            <img class="login-button" src="img/facebook-login.png" ng-click="loginWithFacebook()"></img>
           </label>
 
           <label class="item">
-            <button type="submit" class="button button-block button-balanced">
-              Login with email
-            </button>
+            <img class="login-button" src="img/email-login.png" ng-click="loginWithEmail()"></img>
           </label>
 
           <label class="item">
-            <button class="button button-block button-balanced" ng-click="registerWithEmail()">
-              Register with email
-            </button>
+            <img class="signup-button" src="img/tap-to-signup.png" ng-click="goToSignup()"></img>
           </label>
         </div>
-
-<!--             <button class="button button-block button-positive" type="submit">Log in</button>
- -->
-        <!-- </div> -->
       </div>
     </form>
   </ion-content>
