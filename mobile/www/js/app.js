@@ -55,7 +55,8 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     url: '/venues',
     views: {
       'menuContent': {
-        templateUrl: 'templates/venues.html'
+        templateUrl: 'templates/venues.html',
+        controller: 'VenuesCtrl'
       }
     }
   })
@@ -64,7 +65,8 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     url: '/artists',
     views: {
       'menuContent': {
-        templateUrl: 'templates/artists.html'
+        templateUrl: 'templates/artists.html',
+        controller: 'ArtistsCtrl'
       }
     }
   })
@@ -82,7 +84,8 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     url: '/search',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
       }
     }
   })

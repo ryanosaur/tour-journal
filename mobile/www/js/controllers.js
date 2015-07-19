@@ -25,13 +25,13 @@ angular.module('starter.controllers', [])
   };
 
   // Perform the login action when the user submits the login form
-  $scope.login = function() {
-    User.loginUser($scope.user)
+  $scope.login = function(user) {
+    User.loginUser(user)
     .success(function(user){
       console.log(user);
       User.setActiveUser(user);
       $scope.closeLogin();
-      $scope.go('^.featured');
+      $state.go('^.featured');
     }).
     catch(function(error){
       console.log(error);
@@ -68,7 +68,9 @@ angular.module('starter.controllers', [])
   });
 })
 .controller('ArtistsCtrl', function($scope, User, Artist) {
+  console.log('artists controller loaded');
   $scope.$on('$ionicView.enter', function(e) {
+    console.log('artists view enter');
     Artist.getArtists()
     .success(function(artists){
       console.log(artists);
@@ -102,6 +104,19 @@ angular.module('starter.controllers', [])
       console.log(error);
     });
   });
+})
+.controller('SearchCtrl', function($scope, $state, User, Search) {
+  $scope.getResults = function(search){
+    console.log('controller', search);
+    Search.getResults(search)
+    .success(function(results){
+      console.log(results);
+      $scope.results = results;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  }
 })
 .controller('FeaturedCtrl', function($scope, $state, User, Artist, Events) {
   $scope.$on('$ionicView.enter', function(e) {
