@@ -34,3 +34,15 @@ mobile/plugins/
 #stuff for database
 backend/node_modules/
 
+# MEANJS stuff
+.DS_Store
+.nodemonignore
+.sass-cache/
+npm-debug.log
+node_modules/
+public/lib
+app/tests/coverage/
+.bower-*/
+.idea/
+
+
