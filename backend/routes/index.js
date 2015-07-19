@@ -69,5 +69,49 @@ router.delete('/artists/:id', function(req, res, next){
   });
 });
 
+router.get('/venues/', function(req, res, next){
+  var search_req = new cps.SearchRequest(cps.Term("venue", "userType"),
+      0, 20);
+    cpsConn.sendRequest(search_req, function (err, search_resp) {
+       if (err) return console.log(err);
+       console.log(search_resp.results.document);
+    });
+});
+
+router.get('/venues/:id', function(req, res, next){
+  var retrieve_req = new cps.RetrieveRequest(req.params.id);
+  cpsConn.sendRequest(retrieve_req, function (err, retrieve_resp) {
+     if (err){
+        res.json(err);
+      }
+     if (retrieve_resp) {
+        res.json(retrieve_resp.results.document[0]);
+     }
+  }, 'json');;
+});
+
+router.patch('/venues/:id', function(req, res, next){
+  var replace_request = new cps.PartialReplaceRequest(req.body);
+  cpsConn.sendRequest(replace_request, function (err, replace_resp) {
+     if (err){
+       res.json(err);
+     }
+     if (replace_resp) {
+        res.json(replace_resp);
+     }
+  }, 'json');
+});
+
+router.delete('/venues/:id', function(req, res, next){
+  cpsConn.sendRequest(new cps.DeleteRequest({ id: req.params.id }), function (err, delete_resp) {
+     if (err){
+       res.json(err);
+     }
+     if(delete_resp){
+      res.json(delete_resp);
+     }
+  });
+});
+
 
 module.exports = router;
