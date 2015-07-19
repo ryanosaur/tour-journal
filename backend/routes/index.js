@@ -6,6 +6,9 @@ var ProfileSchema = require('../models/profileSchema.js');
 var cpsConn = new cps.Connection('tcp://cloud-eu-0.clusterpoint.com:9007', 'Database',
             process.env.CLUSTERPOINT_USERNAME, process.env.CLUSTERPOINT_PASSWORD,
             'document', 'document/id', {account: 1393});
+var key = process.env.SPARKPOST_KEY
+, SparkPost = require('sparkpost')
+, client = new SparkPost(key);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,6 +23,24 @@ router.post('/signup', function(req, res, next) {
       res.json(err);
       return;
     }
+
+    var reqOpts = {
+      transmissionBody: {
+        recipients: [{ address: { email: req.body.email } }],
+        content: {
+          template_id: 'tour-journal-welcome'
+        }
+      }
+    };
+
+    client.transmissions.send(reqOpts, function(err, res) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(res.body);
+        console.log('Congrats you can use our SDK!');
+      }
+    });
      res.json(resp);
   });
 });
