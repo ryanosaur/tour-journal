@@ -27,6 +27,15 @@ h1 {
   color: white;
 }
 
+input {
+  font-family: 'Roboto Slab';
+}
+
+h2 {
+  font-family: 'Roboto Slab';
+  color: white;  
+}
+
 body {
   font-family: 'Open Sans';
 }
@@ -34,6 +43,28 @@ body {
 .ctr {
   margin: 0 auto;
   width: 26% !important;
+}
+
+ion-content .search .item {
+  background-color: black;
+}
+
+.item-complex {
+  background-color: black !important;
+}
+
+
+.menu-item {
+  background-color: black !important;
+  color: white;    
+  a {
+    background-color: black !important;
+    color: white;    
+  }
+}
+
+.menu {
+  background-color: black !important;
 }
 
 .logo {
@@ -44,6 +75,10 @@ body {
 .feature-image{
   width: 100vw;
   height: 50vw;
+}
+
+.item-input-inset {
+  background-color: #333333;
 }
 
 .login-buttons {
@@ -65,8 +100,10 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  background-image: url('/img/sign-up-bg.png');
+  background-image: url('../img/sign-up-bg.png');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;  
   .item {
     padding-top: 0px;
   }
@@ -74,6 +111,17 @@ body {
     padding-top: 5px;
     margin-left: 10px;
     width: 95%;
+  }
+}
+
+.inline-profile-rating {
+  span {
+    font-size: 1em;
+    color: white;
+  }
+  img {
+    width: 11px;
+    margin-left: 30px;
   }
 }
 
@@ -98,4 +146,9 @@ body {
 .feature {
   background-color: #000000;
   color: #ffffff;
+}
+
+.title {
+  font-family: 'Roboto Slab';
+  font-size: 2em !important;
 }

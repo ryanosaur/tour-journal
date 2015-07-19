@@ -6,25 +6,15 @@
     <form ng-submit="doLogin()">
       <div class="list">
         <div class="login-buttons">
-<!--           <label class="item">
-            <button ng-click="loginWithTwitter()">
-              <img class="login-button" src="img/twitter-login.png" ng-click="loginWithTwitter()"></img>
-            </button>
-          </label> -->
-
-<!--           <label class="item">
-            <img class="login-button" src="img/facebook-login.png" ng-click="loginWithFacebook()"></img>
-          </label>
- -->
           <label class="item">
-            <button class="login-button" src="img/email-login.png" ng-click="closeLogin()"></button>
+            <img class="login-button" src="img/email-login.png" />
           </label>
 
-          <label class="item">
-            <img class="signup-button" src="img/tap-to-signup.png" ng-click="goToSignup()"></img>
-          </label>
         </div>
       </div>
     </form>
+    <button ng-click="register()">
+      <img class="signup-button" src="img/tap-to-signup.png" />
+    </button>
   </ion-content>
 </ion-modal-view>

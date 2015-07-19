@@ -1,36 +1,37 @@
 <ion-view view-title="Register">
 <ion-content class="center">
-  <form ng-submit="register()">
+  <form ng-submit="register(user)">
     <div class="list">
       <label class="item item-input item-floating-label">
         <span class="input-label">Display Name</span>
-        <input type="text" placeholder="Display Name">
+        <input type="text" placeholder="Display Name" ng-model="user.username" required>
       </label>
       <label class="item item-input item-select">
         <div class="input-label">
           Artist/Venue
         </div>
-        <select>
+        <select ng-model="user.userType">
           <option>Artist</option>
           <option selected>Venue</option>
         </select>
       </label>
       <label class="item item-input item-floating-label">
         <span class="input-label">Genre(s)</span>
-        <input type="text" placeholder="Genre(s)">
+        <input type="text" placeholder="Genre(s)" ng-model="user.genre" required>
       </label>
       <label class="item item-input item-floating-label">
         <span class="input-label">Email</span>
-        <input type="text" placeholder="Email">
+        <input type="email" placeholder="Email" ng-model="user.email" required>
       </label>
       <label class="item item-input item-floating-label">
         <span class="input-label">Location</span>
-        <input type="text" placeholder="Location">
+        <input type="text" placeholder="Location" ng-model="user.location" required>
       </label>
       <label class="item item-input item-floating-label">
         <span class="input-label">Profile Image Url</span>
-        <input type="text" placeholder="Profile Image Url ex. http://placehold.it/150x150">
+        <input type="text" placeholder="Profile Image Url ex. http://placehold.it/150x150" ng-model="user.imgUrl">
       </label>
+      <button type="submit" name="button">Submit</button>
     </div>
   </form>
 </ion-content>

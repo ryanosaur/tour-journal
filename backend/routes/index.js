@@ -17,7 +17,7 @@ router.post('/signup', function(req, res, next) {
   cpsConn.sendRequest(new cps.InsertRequest(document), function (err, resp) {
      if (err){
        return console.error(err);
-     } 
+     }
      console.log(resp);
      res.send('new user');
   });
