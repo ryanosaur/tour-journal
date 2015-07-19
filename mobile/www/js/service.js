@@ -1,6 +1,9 @@
   angular.module('starter.user', [])
-  .service('User', function($http){
-    var BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+  .constant("URLS", {
+    "BASE_URL": "http://localhost:3000"
+  })
+  .service('User', function($http, URLS){
+    var BASE_URL = URLS.BASE_URL;
     this.activeUser = {};
     this.registerUser = function(user){
       return $http.post(BASE_URL + '/signup', user);
@@ -12,8 +15,8 @@
       return this.activeUser = user;
     }
   })
-  .service('Artist', function($http){
-    var BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+  .service('Artist', function($http, URLS){
+    var BASE_URL = URLS.BASE_URL;
     this.getArtists = function(){
       return $http.get(BASE_URL + '/artists');
     }
@@ -27,8 +30,8 @@
       return $http.delete(BASE_URL + '/artists/' + username);
     }
   })
-  .service('Venue', function($http){
-    var BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+  .service('Venue', function($http, URLS){
+    var BASE_URL = URLS.BASE_URL;
     this.getVenues = function(){
       return $http.get(BASE_URL + '/venues');
     }
@@ -42,8 +45,8 @@
       return $http.delete(BASE_URL + '/venues/' + username);
     }
   })
-  .service('Events', function($http){
-    var BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+  .service('Events', function($http, URLS){
+    var BASE_URL = URLS.BASE_URLS;
     this.getEvents = function(){
       return $http.get(BASE_URL + '/events');
     }
