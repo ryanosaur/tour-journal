@@ -91,7 +91,7 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
   })
 
   .state('app.profile', {
-    url: '/profile/:profileId',
+    url: '/profile/:id',
     views: {
       'menuContent': {
         templateUrl: 'templates/profile.html',

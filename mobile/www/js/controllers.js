@@ -60,26 +60,30 @@ angular.module('starter.controllers', [])
 .controller('ProfileCtrl', function($scope, $ionicModal, User, Venue, $state) {
   console.log('profilectrl');
   $scope.booking = function() {
-    console.log('book');
     $ionicModal.fromTemplateUrl('templates/booking.html', {
       scope: $scope
     }).then(function(modal) {
       $scope.modal = modal;
       $scope.modal.show();
-    });  
+    });
+  }
+
+  $scope.bookingUser = function() {
+      $scope.modal.hide();
   }
 
   $scope.$on('$ionicView.enter', function(e) {
-    Venue.getVenue($state.params.username)
+    Venue.getVenue($state.params.id)
     .success(function(user){
       $scope.user = user;
+      console.log($scope.user);
     })
     .catch(function(error){
       console.log(error);
     });
   });
 })
-.controller('VenuesCtrl', function($scope, User, Venue) {
+.controller('VenuesCtrl', function($scope, User, Venue, $state) {
   $scope.$on('$ionicView.enter', function(e) {
     Venue.getVenues()
     .success(function(venues){
@@ -89,8 +93,11 @@ angular.module('starter.controllers', [])
       console.log(error);
     });
   });
+  $scope.getVenuePage = function(index){
+    $state.go('app.profile', {id: $scope.venues[index].id });
+  }
 })
-.controller('ArtistsCtrl', function($scope, User, Artist) {
+.controller('ArtistsCtrl', function($scope, User, Artist, $state) {
   $scope.$on('$ionicView.enter', function(e) {
     Artist.getArtists()
     .success(function(artists){
@@ -99,7 +106,12 @@ angular.module('starter.controllers', [])
     .catch(function(error){
       console.log(error);
     });
+    $scope.getArtistPage = function(index){
+      $state.go('app.profile', {id: $scope.artists[index].id });
+    }
   });
+
+
 })
 .controller('VenueCtrl', function($scope, $state, User, Venue) {
   $scope.$on('$ionicView.enter', function(e) {
@@ -116,7 +128,7 @@ angular.module('starter.controllers', [])
   $scope.$on('$ionicView.enter', function(e) {
     Artist.getArtist($state.params.username)
     .success(function(artist){
-      console.log(artist);
+      console.log(artists);
       $scope.artist = artist;
     })
     .catch(function(error){
@@ -157,7 +169,7 @@ angular.module('starter.controllers', [])
     // console.log(index);
   }
   $scope.getVenuePage = function(index){
-    $state.go('app.profile', {id: $scope.artists[index].id });
+    $state.go('app.profile', {id: $scope.venues[index].id });
   }
 })
 .controller('BookingCtrl', function($scope, $state, User, Artist, Events) {

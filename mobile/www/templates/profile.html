@@ -4,8 +4,8 @@
   </ion-nav-title>
   <ion-content>
 
-    <img src="../img/jelani.png" class="profile-img">
-    <h4>Jelani Sipho</h4>
+    <img src="{{user.profile_img}}" class="profile-img">
+    <h4>{{user.id}}</h4>
     <div class="inline-profile-rating">
       <span>
         <i class="icon ion-ios-star"></i>
@@ -25,8 +25,8 @@
       <br>
     </div>
 
-    <div class="ctr"><img src="../img/tag.png" alt="" class="tag"> Hip Hop</div>
-    <div class="ctr">Corson, CA</div>
+    <div class="ctr"><img src="../img/tag.png" alt="" class="tag">{{user.genre}}</div>
+    <div class="ctr">{{user.location}}</div>
 
     <div class="social-icons">
       <span>
@@ -39,11 +39,11 @@
         <i class="icon ion-social-instagram"></i>
       </span>
       <br>
-    </div>    
+    </div>
 
     <div class="profile-buttons">
       <img src="../img/book-button.png" alt="" ng-click="booking()">
-      <img src="../img/message-button.png" alt="">      
+      <img src="../img/message-button.png" alt="">
     </div>
     <div class="container">
       <div class="profile-desc">
