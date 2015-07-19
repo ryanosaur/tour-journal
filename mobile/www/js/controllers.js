@@ -1,5 +1,4 @@
 angular.module('starter.controllers', [])
-
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, User, $state) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -28,7 +27,6 @@ angular.module('starter.controllers', [])
   $scope.login = function(user) {
     User.loginUser(user)
     .success(function(user){
-      console.log(user);
       User.setActiveUser(user);
       $scope.closeLogin();
       $state.go('^.featured');
@@ -61,7 +59,6 @@ angular.module('starter.controllers', [])
   $scope.$on('$ionicView.enter', function(e) {
     Venue.getVenues()
     .success(function(venues){
-      console.log(venues);
       $scope.venues = venues;
     })
     .catch(function(error){
@@ -70,12 +67,9 @@ angular.module('starter.controllers', [])
   });
 })
 .controller('ArtistsCtrl', function($scope, User, Artist) {
-  console.log('artists controller loaded');
   $scope.$on('$ionicView.enter', function(e) {
-    console.log('artists view enter');
     Artist.getArtists()
     .success(function(artists){
-      console.log(artists);
       $scope.artists = artists;
     })
     .catch(function(error){
@@ -87,7 +81,6 @@ angular.module('starter.controllers', [])
   $scope.$on('$ionicView.enter', function(e) {
     Venue.getVenue($state.params.username)
     .success(function(venue){
-      console.log(venue);
       $scope.venue = venue;
     })
     .catch(function(error){
@@ -109,10 +102,8 @@ angular.module('starter.controllers', [])
 })
 .controller('SearchCtrl', function($scope, $state, User, Search) {
   $scope.getResults = function(search){
-    console.log('controller', search);
     Search.getResults(search)
     .success(function(results){
-      console.log(results);
       $scope.results = results;
     })
     .catch(function(error){
@@ -120,17 +111,23 @@ angular.module('starter.controllers', [])
     });
   }
 })
-.controller('FeaturedCtrl', function($scope, $state, User, Artist, Events) {
+.controller('FeaturedCtrl', function($scope, $state, User, Artist, Venue) {
   $scope.$on('$ionicView.enter', function(e) {
-    // Artist.getArtist($state.params.username)
-    // .success(function(artist){
-    //   console.log(artist);
-    //   $scope.artist = artist;
-    // })
-    // .catch(function(error){
-    //   console.log(error);
-    // });
-  });
+      Artist.getArtists()
+      .success(function(artists){
+        $scope.artists = artists.slice(0,3);
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+      Venue.getVenues()
+      .success(function(venues){
+        $scope.venues = venues.slice(0,3);
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+    });
 })
 .controller('BookingCtrl', function($scope, $state, User, Artist, Events) {
   $scope.$on('$ionicView.enter', function(e) {

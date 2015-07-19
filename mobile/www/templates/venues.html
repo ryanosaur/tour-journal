@@ -1,6 +1,11 @@
-<ion-view view-title="Venues">
-  <ion-content class="venues">
-
+<ion-view view-title="Venues" class="venues">
+  <ion-nav-title>
+    <div><img src="img/tour-journal-word-logo1.png"></div>
+  </ion-nav-title>
+  <ion-content>
+  <ion-nav-title>
+    <div><img src="img/tour-journal-word-logo1.png"></div>
+  </ion-nav-title>
     <div class="bar bar-header item-input-inset">
       <label class="item-input-wrapper">
         <i class="icon ion-ios-search placeholder-icon"></i>
@@ -12,7 +17,7 @@
     </div>
 
     <a class="item item-thumbnail-left" href="#" ng-repeat="venue in venues track by $index">
-      <img src="http://placehold.it/100x100">
+      <img src="{{venue.profile_img}}">
       <h2>{{venue.id}}</h2>
       <p>{{venue.location}}</p>
     </a>
