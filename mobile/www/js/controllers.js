@@ -1,9 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, User) {
-
-  console.log('AppCtrl');
-
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, User, $state) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -44,17 +41,26 @@ angular.module('starter.controllers', [])
     //   $scope.closeLogin();
     // }, 1000);
   };
+
+  $scope.register = function(){
+    $scope.modal.hide();
+    $state.go('^.register');
+  }
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('RegisterCtrl', function($scope, $http, User) {
+  $scope.register = function(user){
+    user.provider = 'local';
+    console.log(user);
+    User.registerUser(user)
+    .success(function(user){
+      $http.defaults.headers
+      console.log(user);
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  }
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {

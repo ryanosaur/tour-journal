@@ -28,20 +28,17 @@ var UserSchema = new Schema({
 	email: {
 		type: String,
 		trim: true,
-		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your email'],
-		match: [/.+\@.+\..+/, 'Please fill a valid email address']
+		default: ''
 	},
 	username: {
 		type: String,
-		unique: 'testing error message',
+		unique: true,
 		required: 'Please fill in a username',
 		trim: true
 	},
 	password: {
 		type: String,
-		default: '',
-		validate: [validateLocalStrategyPassword, 'Password should be longer']
+		default: ''
 	},
 	salt: {
 		type: String
@@ -50,7 +47,7 @@ var UserSchema = new Schema({
 		type: String,
 		required: 'Provider is required'
 	},
-	type: {
+	userType: {
 		type: String,
 		required: true
 	},
