@@ -21,26 +21,21 @@ angular.module('starter.controllers', [])
 
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
-    console.log('close')
     $scope.modal.hide();
   };
 
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    User.loginUser({ username: $scope.loginData })
-    .success(function(data){
-      console.log(data);
+  $scope.login = function() {
+    User.loginUser($scope.user)
+    .success(function(user){
+      console.log(user);
+      User.setActiveUser(user);
       $scope.closeLogin();
+      $scope.go('^.featured');
     }).
     catch(function(error){
       console.log(error);
     });
-
-    // $timeout(function() {
-    //   $scope.closeLogin();
-    // }, 1000);
   };
 
   $scope.register = function(){
@@ -49,10 +44,8 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('RegisterCtrl', function($scope, $http, User) {
+.controller('RegisterCtrl', function($scope, User) {
   $scope.register = function(user){
-    user.provider = 'local';
-    console.log(user);
     User.registerUser(user)
     .success(function(user){
       User.setActiveUser(user);
@@ -62,6 +55,7 @@ angular.module('starter.controllers', [])
     });
   }
 })
+.controller('LoginCtrl', function($scope, User) {
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
+;
