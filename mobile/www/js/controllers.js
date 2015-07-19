@@ -146,6 +146,9 @@ angular.module('starter.controllers', [])
       console.log(error);
     });
   }
+  $scope.getArtistPage = function(index){
+    $state.go('app.profile', {id: $scope.results[index].id });
+  }
 })
 .controller('FeaturedCtrl', function($scope, $state, User, Artist, Venue) {
   $scope.$on('$ionicView.enter', function(e) {
