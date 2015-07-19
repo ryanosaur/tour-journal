@@ -55,7 +55,8 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     url: '/venues',
     views: {
       'menuContent': {
-        templateUrl: 'templates/venues.html'
+        templateUrl: 'templates/venues.html',
+        controller: 'VenuesCtrl'
       }
     }
   })
