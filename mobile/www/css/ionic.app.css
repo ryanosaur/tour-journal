@@ -7752,6 +7752,9 @@ body {
 ion-content .search .item {
   background-color: black; }
 
+.item {
+  border: 1px solid #333333; }
+
 .item-complex {
   background-color: black !important; }
 
