@@ -24,8 +24,8 @@ router.post('/signup', function(req, res, next) {
   });
 });
 
-router.post('/login', function(req, res, next) {
-  var retrieve_req = new cps.RetrieveRequest({ id: req.body.id });
+router.get('/login', function(req, res, next) {
+  var retrieve_req = new cps.RetrieveRequest(req.body.id);
   cpsConn.sendRequest(retrieve_req, function (err, retrieve_resp) {
      if (err){
        res.json(err);
