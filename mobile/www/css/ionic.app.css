@@ -7693,6 +7693,29 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+h1 {
+  font-family: 'Roboto Slab';
+  font-size: 3em; }
+
+body {
+  font-family: 'Open Sans'; }
+
 .feature-image {
   width: 100vw;
   height: 50vw; }
+
+.login-modal {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%; }
+  .login-modal .list {
+    margin-top: 80px; }
+  .login-modal span {
+    font-size: 25px !important; }
+
+.profile-rating {
+  text-align: center; }
+  .profile-rating span {
+    font-size: 2em !important; }
