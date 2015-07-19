@@ -21,26 +21,21 @@ angular.module('starter.controllers', [])
 
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
-    console.log('close')
     $scope.modal.hide();
   };
 
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    User.loginUser({ username: $scope.loginData })
-    .success(function(data){
-      console.log(data);
+  $scope.login = function() {
+    User.loginUser($scope.user)
+    .success(function(user){
+      console.log(user);
+      User.setActiveUser(user);
       $scope.closeLogin();
+      $scope.go('^.featured');
     }).
     catch(function(error){
       console.log(error);
     });
-
-    // $timeout(function() {
-    //   $scope.closeLogin();
-    // }, 1000);
   };
 
   $scope.register = function(){
@@ -49,20 +44,87 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('RegisterCtrl', function($scope, $http, User) {
+.controller('RegisterCtrl', function($scope, User) {
   $scope.register = function(user){
-    user.provider = 'local';
-    console.log(user);
     User.registerUser(user)
     .success(function(user){
-      $http.defaults.headers
-      console.log(user);
+      User.setActiveUser(user);
     })
     .catch(function(error){
       console.log(error);
     });
   }
 })
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+.controller('VenuesCtrl', function($scope, User, Venue) {
+  $scope.$on('$ionicView.enter', function(e) {
+    Venue.getVenues()
+    .success(function(venues){
+      console.log(venues);
+      $scope.venues = venues;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  });
+})
+.controller('ArtistsCtrl', function($scope, User, Artist) {
+  $scope.$on('$ionicView.enter', function(e) {
+    Artist.getArtists()
+    .success(function(artists){
+      console.log(artists);
+      $scope.artists = artists;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  });
+})
+.controller('VenueCtrl', function($scope, $state, User, Venue) {
+  $scope.$on('$ionicView.enter', function(e) {
+    Venue.getVenue($state.params.username)
+    .success(function(venue){
+      console.log(venue);
+      $scope.venue = venue;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  });
+})
+.controller('ArtistCtrl', function($scope, $state, User, Artist) {
+  $scope.$on('$ionicView.enter', function(e) {
+    Artist.getArtist($state.params.username)
+    .success(function(artist){
+      console.log(artist);
+      $scope.artist = artist;
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+  });
+})
+.controller('FeaturedCtrl', function($scope, $state, User, Artist, Events) {
+  $scope.$on('$ionicView.enter', function(e) {
+    // Artist.getArtist($state.params.username)
+    // .success(function(artist){
+    //   console.log(artist);
+    //   $scope.artist = artist;
+    // })
+    // .catch(function(error){
+    //   console.log(error);
+    // });
+  });
+})
+.controller('BookingCtrl', function($scope, $state, User, Artist, Events) {
+  $scope.$on('$ionicView.enter', function(e) {
+    // Artist.getArtist($state.params.username)
+    // .success(function(artist){
+    //   console.log(artist);
+    //   $scope.artist = artist;
+    // })
+    // .catch(function(error){
+    //   console.log(error);
+    // });
+  });
+})
+;
