@@ -7714,3 +7714,8 @@ body {
     margin-top: 80px; }
   .login-modal span {
     font-size: 25px !important; }
+
+.profile-rating {
+  text-align: center; }
+  .profile-rating span {
+    font-size: 2em !important; }
