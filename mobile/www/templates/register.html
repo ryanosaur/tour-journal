@@ -1,5 +1,5 @@
 <ion-view view-title="Register">
-<ion-content class="center">
+<ion-content class="center register-form">
   <form ng-submit="register(user)">
     <div class="list">
       <label class="item item-input item-floating-label">
@@ -31,7 +31,9 @@
         <span class="input-label">Profile Image Url</span>
         <input type="text" placeholder="Profile Image Url ex. http://placehold.it/150x150" ng-model="user.imgUrl">
       </label>
-      <button type="submit" name="button">Submit</button>
+      <div class="button-wrapper">
+        <button type="submit" name="button" class="button button-dark center">Submit</button>
+      </div>
     </div>
   </form>
 </ion-content>
