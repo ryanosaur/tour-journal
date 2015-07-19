@@ -1,6 +1,40 @@
-<ion-view view-title="Featured">
+<!-- <ion-view view-title="Feature"> -->
+<ion-view>
+  <ion-nav-title>
+    <div><img src="img/tour-journal-word-logo1.png"></div>
+  </ion-nav-title>
   <ion-content>
-    <img src="http://placehold.it/350x250" class="feature-image" alt="feature" />
-    <h1>This is the featured page</h1>
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+  <ion-slide>
+    <img src="img/bass-feature.png" class="slider-image" alt="feature" />
+  </ion-slide>
+  <ion-slide>
+    <img src="img/dolby-ad.png" class="slider-image" alt="feature" />
+  </ion-slide>
+  <ion-slide>
+    <img src="img/tam-feature.png" class="slider-image" alt="feature" />
+  </ion-slide>
+</ion-slide-box>
+<div class="item item-divider feature">
+  Artists
+</div>
+
+<div class="row feature">
+  <div class="col padding"><img src="http://placehold.it/95x95" /></div>
+  <div class="col padding"><img src="http://placehold.it/95x95" /></div>
+  <div class="col padding"><img src="http://placehold.it/95x95" /></div>
+</div>
+
+<div class="item item-divider feature">
+  Venues
+</div>
+
+<div class="row feature">
+  <div class="col padding"><img src="http://placehold.it/95x95" /></div>
+  <div class="col padding"><img src="http://placehold.it/95x95" /></div>
+  <div class="col padding"><img src="http://placehold.it/95x95" /></div>
+</div>
+
+
   </ion-content>
 </ion-view>
