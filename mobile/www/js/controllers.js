@@ -25,13 +25,13 @@ angular.module('starter.controllers', [])
   };
 
   // Perform the login action when the user submits the login form
-  $scope.login = function() {
-    User.loginUser($scope.user)
+  $scope.login = function(user) {
+    User.loginUser(user)
     .success(function(user){
       console.log(user);
       User.setActiveUser(user);
       $scope.closeLogin();
-      $scope.go('^.featured');
+      $state.go('^.featured');
     }).
     catch(function(error){
       console.log(error);
