@@ -7717,3 +7717,16 @@ body {
   text-align: center; }
   .profile-rating span {
     font-size: 2em !important; }
+
+.slider-image {
+  width: 100vw;
+  height: 100vw; }
+
+.bar.bar-balanced {
+  border-color: #000000;
+  background-color: #000000;
+  color: #ffffff; }
+
+.feature {
+  background-color: #000000;
+  color: #ffffff; }
