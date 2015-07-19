@@ -7737,12 +7737,14 @@ ion-content .search .item {
   background-color: black !important; }
 
 .login-slider-wrapper {
-  margin-top: 20vh; }
+  margin-top: 22vh; }
 
 .login-slider {
   background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
   width: 90%;
   margin: 0 auto;
+  padding-top: 20px;
   padding-bottom: 10px; }
 
 .map {
@@ -7772,11 +7774,10 @@ ion-content .search .item {
 .login-email {
   border: none;
   background-color: transparent;
-  margin-top: 2vh;
   width: 100%; }
 
 .login-form {
-  margin-top: 5vh; }
+  margin-top: 10vh; }
   .login-form .item-floating-label {
     width: 100%; }
 
@@ -7784,6 +7785,7 @@ ion-content .search .item {
   background-color: #333333; }
 
 .signup {
+  margin-top: 10px;
   border: none;
   background-color: transparent; }
 

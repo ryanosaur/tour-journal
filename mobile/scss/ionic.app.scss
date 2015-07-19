@@ -54,6 +54,10 @@ body {
   }
 }
 
+.slider-image-login {
+  width: 100%;
+}
+
 .item-select select {
   background-color: black;
   border: solid white 1px;
@@ -70,6 +74,19 @@ ion-content .search .item {
 
 .item-complex {
   background-color: black !important;
+}
+
+.login-slider-wrapper {
+  margin-top: 22vh;
+}
+
+.login-slider {
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 6px;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .map {
@@ -107,12 +124,12 @@ ion-content .search .item {
 .login-email {
   border: none;
   background-color: transparent;
-  margin-top: 20vh;
+  // margin-top: 2vh;
   width: 100%;
 } 
 
 .login-form {
-  margin-top: 37vh;
+  margin-top: 10vh;
   .item-floating-label {
     width: 100%;
   }
@@ -123,6 +140,7 @@ ion-content .search .item {
 }
 
 .signup {
+  margin-top: 10px;
   border: none;
   background-color: transparent;
 }
