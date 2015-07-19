@@ -1,6 +1,6 @@
-angular.module('starter.controllers', ['firebase'])
+angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $firebase, $firebaseAuth, User) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, User) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -12,33 +12,12 @@ angular.module('starter.controllers', ['firebase'])
   // Form data for the login modal
   $scope.loginData = {};
 
-  var ref = new Firebase("https://tourjournal.firebaseio.com");
-  ref.unauth();
-
-
-  // var firebaseRef = new Firebase("https://tourjournal.firebaseio.com/");
-  // $scope.auth = $firebaseSimpleLogin(firebaseRef);
-
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
-    ref.onAuth(function(authData) {
-      if (authData) {
-       User.loginUser({username: authData.uid })
-        .success(function(data){
-          console.log(data);
-          $scope.closeLogin();
-        }).
-        catch(function(error){
-          console.log(error);
-        });
-      } else {
-        $scope.modal.show();
-        console.log("Client unauthenticated.")
-      }
-    });
+    $scope.modal.show();
   });
 
   // Triggered in the login modal to close it
@@ -50,16 +29,18 @@ angular.module('starter.controllers', ['firebase'])
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
 
-    $timeout(function() {
+    User.loginUser({ username: $scope.loginData })
+    .success(function(data){
+      console.log(data);
       $scope.closeLogin();
-    }, 1000);
-  };
-
-  $scope.loginWithTwitter = function() {
-    console.log('Doing login', $scope.loginData);
-    ref.authWithOAuthRedirect("twitter", function(error) {
+    }).
+    catch(function(error){
       console.log(error);
     });
+
+    // $timeout(function() {
+    //   $scope.closeLogin();
+    // }, 1000);
   };
 })
 

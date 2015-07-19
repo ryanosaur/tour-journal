@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/demonodeserver-dev',
+	db: 'mongodb://heroku_wpv9g6tr:r1p7cqvvigulvtkmoue4v1ue6q@ds047692.mongolab.com:47692/heroku_wpv9g6tr',
 	app: {
 		title: 'DemoNodeServer - Development Environment'
 	},
@@ -11,8 +11,8 @@ module.exports = {
 		callbackURL: '/auth/facebook/callback'
 	},
 	twitter: {
-		clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
-		clientSecret: process.env.TWITTER_SECRET || 'CONSUMER_SECRET',
+		clientID: process.env.TWITTER_KEY,
+		clientSecret: process.env.TWITTER_SECRET,
 		callbackURL: '/auth/twitter/callback'
 	},
 	google: {
