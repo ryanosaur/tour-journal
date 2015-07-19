@@ -9,7 +9,7 @@
       return $http.post(BASE_URL + '/signup', user);
     }
     this.loginUser = function(user){
-      return $http.post(BASE_URL + '/signin', user);
+      return $http.post(BASE_URL + '/login', user);
     }
     this.setActiveUser = function(user){
       return this.activeUser = user;

@@ -25,7 +25,7 @@ router.post('/signup', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
-  var retrieve_req = new cps.RetrieveRequest(req.body.username);
+  var retrieve_req = new cps.RetrieveRequest({ id: req.body.id });
   cpsConn.sendRequest(retrieve_req, function (err, retrieve_resp) {
      if (err){
        res.json(err);
@@ -75,6 +75,18 @@ router.delete('/artists/:id', function(req, res, next){
   });
 });
 
+router.get('/artists/', function(req, res, next){
+  var search_req = new cps.SearchRequest(cps.Term("artist", "userType"),
+      0, 20);
+    cpsConn.sendRequest(search_req, function (err, search_resp) {
+       if (err){
+         res.json(err);
+         return;
+       };
+       res.json(search_resp.results.document);
+    });
+});
+
 router.get('/venues/', function(req, res, next){
   var search_req = new cps.SearchRequest(cps.Term("venue", "userType"),
       0, 20);
@@ -83,7 +95,7 @@ router.get('/venues/', function(req, res, next){
          res.json(err);
          return;
        };
-       console.log(search_resp.results.document);
+       res.json(search_resp.results.document);
     });
 });
 
