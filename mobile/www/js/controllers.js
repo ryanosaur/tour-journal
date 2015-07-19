@@ -57,8 +57,10 @@ angular.module('starter.controllers', [])
     });
   }
 })
-.controller('ProfileCtrl', function($scope, User) {
+.controller('ProfileCtrl', function($scope, $ionicModal, User, Venue, $state) {
+  console.log('profilectrl');
   $scope.booking = function() {
+    console.log('book');
     $ionicModal.fromTemplateUrl('templates/booking.html', {
       scope: $scope
     }).then(function(modal) {
@@ -66,12 +68,6 @@ angular.module('starter.controllers', [])
       $scope.modal.show();
     });  
   }
-  $ionicModal.fromTemplateUrl('templates/booking.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-    $scope.modal.show();
-  });  
 
   $scope.$on('$ionicView.enter', function(e) {
     Venue.getVenue($state.params.username)

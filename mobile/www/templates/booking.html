@@ -1,8 +1,7 @@
-<ion-modal-view class="booking-modal">
-  <div class="ctr">
-    <img class="logo" src="img/logo.png" alt="">
-  </div>
+<ion-modal-view class="booking-modal booking">
   <ion-content scroll="false">
+    <h2>Artist</h2>
+    <h3>Venue</h3>
     <form ng-submit="booking(user)" class="booking-form">
       <div class="list list-inset">
 
@@ -11,20 +10,15 @@
           <input type="text" placeholder="Date" ng-model="user.date">
         </label>
         <label class="item item-input item-floating-label">
-          <span class="input-label">Password</span>
-          <input type="password" placeholder="Password" ng-model="user.password">
+          <span class="input-label">Time</span>
+          <input type="password" placeholder="Time" ng-model="user.time">
         </label>
 
       </div>
-      <button ng-click="closeLogin()" class="login-email" type="submit">
-          <img class="login-button" src="img/email-login.png" />
-      </button>
+      <div class="button-wrapper">      
+        <button type="submit" name="button" class="button button-dark">Book</button>
+      </div>
     </form>
 
-    <label class="item signup-wrapper">
-      <button ng-click="register()" class="signup">
-        <img class="signup-button" src="img/tap-to-signup.png" />
-      </button>
-    </label>
   </ion-content>
 </ion-modal-view>
