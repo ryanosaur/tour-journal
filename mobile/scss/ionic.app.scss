@@ -21,6 +21,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.item {
+  background-color: black;
+}
+
 h1 {
   font-family: 'Roboto Slab';
   font-size: 2em !important;
@@ -40,6 +44,20 @@ body {
   font-family: 'Open Sans';
 }
 
+.button-wrapper {
+  margin: 0 auto;
+  margin-top: 10vh;
+  width: 52%;
+  button {
+    width: 200px;
+  }
+}
+
+.item-select select {
+  background-color: black;
+  border: solid white 1px;
+}
+
 .ctr {
   margin: 0 auto;
   width: 26% !important;
@@ -51,6 +69,15 @@ ion-content .search .item {
 
 .item-complex {
   background-color: black !important;
+}
+
+.map {
+  width: 100%;
+  margin-top: 3vh;
+}
+
+#messages {
+  background-color: black;
 }
 
 
@@ -67,9 +94,41 @@ ion-content .search .item {
   background-color: black !important;
 }
 
+.list-inset {
+  background-color: transparent !important;
+}
+
 .logo {
   margin-top: 5vh;
   width: 100px;
+}
+
+.login-email {
+  border: none;
+  background-color: transparent;
+  margin-top: 20vh;
+  width: 100%;
+} 
+
+.login-form {
+  margin-top: 37vh;
+  .item-floating-label {
+    width: 100%;
+  }
+}
+
+.profile {
+  background-color: #333333;
+}
+
+.signup {
+  border: none;
+  background-color: transparent;
+}
+
+.signup-wrapper {
+  border: none;
+  background-color: transparent;
 }
 
 .feature-image{
@@ -137,6 +196,10 @@ ion-content .search .item {
   height: 100vw;
 }
 
+.venues {
+  background-color: black;
+}
+
 .bar.bar-balanced {
   border-color: #000000;
   background-color: #000000;
@@ -146,6 +209,10 @@ ion-content .search .item {
 .feature {
   background-color: #000000;
   color: #ffffff;
+}
+
+.register-form {
+  background-color: black;
 }
 
 .title {
