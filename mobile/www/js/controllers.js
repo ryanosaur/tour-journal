@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['firebase'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $firebase, $firebaseAuth) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $firebase, $firebaseAuth, User) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -26,8 +26,14 @@ angular.module('starter.controllers', ['firebase'])
     $scope.modal = modal;
     ref.onAuth(function(authData) {
       if (authData) {
-        $scope.closeLogin();
-        console.log("Authenticated with uid:", authData);
+       User.loginUser({username: authData.uid })
+        .success(function(data){
+          console.log(data);
+          $scope.closeLogin();
+        }).
+        catch(function(error){
+          console.log(error);
+        });
       } else {
         $scope.modal.show();
         console.log("Client unauthenticated.")
