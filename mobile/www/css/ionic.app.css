@@ -7711,9 +7711,7 @@ body {
   right: 0;
   width: 100%; }
   .login-modal .list {
-    margin-top: 80px; }
-  .login-modal span {
-    font-size: 25px !important; }
+    margin-top: 10vh; }
 
 .profile-rating {
   text-align: center; }

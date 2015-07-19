@@ -68,6 +68,15 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     }
   })
 
+  .state('app.search', {
+    url: '/search',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/search.html'
+      }
+    }
+  })
+
   .state('app.profile', {
     url: '/profile/:profileId',
     views: {

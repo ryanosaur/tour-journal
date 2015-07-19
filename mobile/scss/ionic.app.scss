@@ -21,7 +21,41 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+h1 {
+  font-family: 'Roboto Slab';
+  font-size: 3em;
+}
+
+body {
+  font-family: 'Open Sans';
+}
+
 .feature-image{
   width: 100vw;
   height: 50vw;
+}
+
+.login-modal{
+  top: 0 ;
+  bottom: 0 ; 
+  left: 0 ;
+  right: 0 ;
+  width: 100%;
+  .list {
+    margin-top: 10vh;
+  }
+  button {
+    // padding-top: 10px;
+  }
+  span {
+    // margin-top: 30px !imortant;
+    // font-size: 300px !important;
+  }
+}
+
+.profile-rating {
+  text-align: center;
+  span {
+    font-size: 2em !important;
+  }
 }
