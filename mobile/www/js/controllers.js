@@ -12,21 +12,20 @@ angular.module('starter.controllers', [])
   // Form data for the login modal
   $scope.loginData = {};
 
+  // var firebaseRef = new Firebase("https://tourjournal.firebaseio.com/");
+  // $scope.auth = $firebaseSimpleLogin(firebaseRef);
+
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
+    $scope.modal.show();
   });
 
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
     $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
   };
 
   // Perform the login action when the user submits the login form
