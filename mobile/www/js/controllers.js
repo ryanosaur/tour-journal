@@ -55,8 +55,7 @@ angular.module('starter.controllers', [])
     console.log(user);
     User.registerUser(user)
     .success(function(user){
-      $http.defaults.headers
-      console.log(user);
+      User.setActiveUser(user);
     })
     .catch(function(error){
       console.log(error);
