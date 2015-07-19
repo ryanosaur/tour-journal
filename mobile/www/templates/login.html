@@ -3,18 +3,28 @@
     <img class="logo" src="img/logo.png" alt="">
   </div>
   <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <div class="login-buttons">
-          <label class="item">
-            <img class="login-button" src="img/email-login.png" />
-          </label>
+    <form ng-submit="login(user)" class="login-form">
+      <div class="list list-inset">
 
-        </div>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Email</span>
+          <input type="text" placeholder="Email" ng-model="user.email">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Password</span>
+          <input type="text" placeholder="Password" ng-model="user.password">
+        </label>
+
       </div>
+      <button ng-click="closeLogin()" class="login-email" type="submit">
+          <img class="login-button" src="img/email-login.png" />
+      </button>
     </form>
-    <button ng-click="register()">
-      <img class="signup-button" src="img/tap-to-signup.png" />
-    </button>
+
+    <label class="item signup-wrapper">    
+      <button ng-click="register()" class="signup">
+        <img class="signup-button" src="img/tap-to-signup.png" />
+      </button>
+    </label>
   </ion-content>
 </ion-modal-view>
