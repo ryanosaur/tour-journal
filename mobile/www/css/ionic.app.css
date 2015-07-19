@@ -7701,6 +7701,10 @@ h1 {
   font-size: 2em !important;
   color: white; }
 
+input#search {
+  border: none;
+  color: black !important; }
+
 input {
   font-family: 'Roboto Slab';
   color: white !important; }
@@ -7711,6 +7715,9 @@ h2 {
 
 body {
   font-family: 'Open Sans'; }
+
+.artists {
+  background-color: black; }
 
 .button-wrapper {
   margin: 0 auto;
@@ -7782,7 +7789,49 @@ ion-content .search .item {
     width: 100%; }
 
 .profile {
-  background-color: #333333; }
+  background-color: black; }
+  .profile .inline-profile-rating {
+    margin: 0 auto;
+    width: 21%;
+    color: white; }
+  .profile .social-icons {
+    color: white;
+    text-align: center;
+    margin-top: 20px; }
+    .profile .social-icons span {
+      margin-left: 5px;
+      margin-right: 5px;
+      font-size: 2em; }
+  .profile .profile-desc {
+    width: 100% !important; }
+  .profile .tag {
+    width: 12px; }
+  .profile .fa {
+    width: 20px !important; }
+  .profile .ctr {
+    color: white !important;
+    text-align: center;
+    margin: 0 auto;
+    width: 21%; }
+  .profile .ctr-profile {
+    color: white !important;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 75%; }
+  .profile h4 {
+    color: white !important;
+    text-align: center;
+    margin-bottom: 0; }
+
+.profile-buttons {
+  margin: 0 auto;
+  width: 80%; }
+  .profile-buttons img {
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 45%; }
 
 .signup {
   margin-top: 10px;
@@ -7834,6 +7883,10 @@ ion-content .search .item {
   width: 11px;
   margin-left: 30px; }
 
+.profile-img {
+  margin-top: -65px;
+  width: 100vw; }
+
 .profile-rating {
   text-align: center; }
   .profile-rating span {
@@ -7842,6 +7895,9 @@ ion-content .search .item {
 .slider-image {
   width: 100vw;
   height: 100vw; }
+
+.search {
+  background-color: black; }
 
 .venues {
   background-color: black; }
