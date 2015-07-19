@@ -3,6 +3,19 @@
     <img class="logo" src="img/logo.png" alt="">
   </div>
   <ion-content scroll="false">
+    <div class="login-slider-wrapper">
+      <ion-slide-box on-slide-changed="slideHasChanged($index)" class="login-slider">
+        <ion-slide>
+          <img src="img/login-slide-1.png" class="slider-image-login" alt="feature" />
+        </ion-slide>
+        <ion-slide>
+          <img src="img/login-slide-2.png" class="slider-image-login" alt="feature" />
+        </ion-slide>
+        <ion-slide>
+          <img src="img/login-slide-3.png" class="slider-image-login" alt="feature" />
+        </ion-slide>
+      </ion-slide-box>
+    </div>
     <form ng-submit="login(user)" class="login-form">
       <div class="list list-inset">
 
